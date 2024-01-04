@@ -18,7 +18,8 @@
         "symfony/framework-bundle": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/validator": "5.4.*",
-        "symfony/yaml": "5.4.*"
+        "symfony/yaml": "5.4.*",
+      "ext-json": "*"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.43"

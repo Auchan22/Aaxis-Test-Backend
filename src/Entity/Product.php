@@ -4,10 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @UniqueEntity("sku")
  * @ORM\Table(name="aaxiproduct")
  */
 class Product
@@ -21,14 +23,13 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=50, nullable=false, unique=true)
-     * @Assert\Unique()
-     * @Assert\NotNull()
+     * @Assert\NotNull(groups={"create"})
      */
     private $sku;
 
     /**
      * @ORM\Column(type="string", length=250, nullable=false)
-     * @Assert\NotNull()
+     * @Assert\NotNull(groups={"create"})
      */
     private $product_name;
 
